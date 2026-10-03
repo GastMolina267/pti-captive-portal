@@ -3,7 +3,7 @@
 # ===========================================
 
 # Base image with Node.js
-FROM node:24-alpine AS base
+FROM node:26-alpine AS base
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Install dependencies only when needed
