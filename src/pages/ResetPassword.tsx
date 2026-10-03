@@ -5,7 +5,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import HospitalLogo from '../components/common/HospitalLogo';
+import VitaliaLogo from '../components/common/VitaliaLogo';
 import FooterAdvertisement from '../components/FooterAdvertisement';
 import { authService } from '../services/authService';
 import { passwordYupSchema } from '../utils/passwordValidation';
@@ -131,7 +131,7 @@ const ResetPassword: React.FC = () => {
       }}
     >
       <Box mb={3.5} sx={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px' }}>
-        <HospitalLogo height={52} />
+        <VitaliaLogo height={52} />
       </Box>
 
       <Box display="flex" flexDirection="column" alignItems="center" gap={1.5} mb={3.5}>

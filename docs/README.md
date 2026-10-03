@@ -1,8 +1,8 @@
-# Documentación — BusDigital Captive Portal
+# Documentación — Vitalia · Portal Cautivo
 
-Documentación técnica, operativa y de usuario del **frontend** del portal cautivo de WiFi para la flota de buses (React + Vite + TypeScript, protocolo UAM/CHAP contra routers Teltonika RUT956).
+Documentación técnica, operativa y de usuario del **frontend** del portal cautivo de la red Wi-Fi de pacientes de **Vitalia — Ecosistema Digital Hospitalario** (React + Vite + TypeScript, protocolo UAM/CHAP contra routers Teltonika RUT956).
 
-> **Alcance**: este repositorio contiene únicamente la SPA que el usuario ve en su navegador. No incluye servidor RADIUS, base de datos propia, ni configuración de firewall — esos componentes corresponden al router del bus y al backend de negocio (repo hermano `mindfactory-busdigital-backend`).
+> **Alcance**: este repositorio contiene únicamente la SPA que el usuario ve en su navegador. No incluye servidor RADIUS, base de datos propia, ni configuración de firewall — esos componentes corresponden al router RUT956 del hospital y a la API NestJS del Edge Gateway.
 
 La documentación está ordenada de forma progresiva: primero cómo poner el proyecto en marcha, después cómo entenderlo y adaptarlo por dentro, y por último cómo operarlo día a día y qué ve el usuario final.
 
@@ -32,6 +32,7 @@ La documentación está ordenada de forma progresiva: primero cómo poner el pro
 | --- | --- |
 | [01-temas.md](03-customization/01-temas.md) | Paleta de colores, tipografía, logos y assets de marca |
 | [02-idiomas.md](03-customization/02-idiomas.md) | Estado actual (sin i18n) y cómo agregarlo |
+| [03-identidad-visual.md](03-customization/03-identidad-visual.md) | Identidad de marca Vitalia (logo, colores, tipografía, componentes) compartida con Backoffice y landing |
 
 ## 4. Operaciones y mantenimiento ([`04-operations/`](04-operations/))
 

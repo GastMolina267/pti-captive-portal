@@ -78,7 +78,7 @@ describe('FaroObservabilityProvider', () => {
       expect(mockedInitializeFaro).toHaveBeenCalledWith(
         expect.objectContaining({
           url: 'https://faro.example/collect',
-          app: { name: 'busdigital-captive-portal', environment: 'development', version: '1.2.3' },
+          app: { name: 'vitalia-captive-portal', environment: 'development', version: '1.2.3' },
           sessionTracking: { enabled: true },
         }),
       );

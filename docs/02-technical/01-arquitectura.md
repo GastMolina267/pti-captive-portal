@@ -2,7 +2,7 @@
 
 ## Visión general
 
-`mindfactory-busdigital-captive-portal` es una **SPA (Single Page Application)** construida con **React 18 + TypeScript + Vite**, cuyo propósito es autenticar usuarios de una red WiFi de flota de buses e integrarse con el protocolo **UAM** (Universal Access Method) de un router **Teltonika RUT956** actuando como NAS (Network Access Server). No implementa un servidor RADIUS ni firewall propio: delega esas funciones al router y a un backend de negocio externo.
+`pti-captive-portal` es el portal cautivo de **Vitalia — Ecosistema Digital Hospitalario**. Es una **SPA (Single Page Application)** construida con **React 18 + TypeScript + Vite**, cuyo propósito es autenticar a pacientes y acompañantes en la red Wi-Fi de la sala de espera (VLAN 20) e integrarse con el protocolo **UAM** (Universal Access Method) de un router **Teltonika RUT956** actuando como NAS (Network Access Server). No implementa un servidor RADIUS ni firewall propio: delega esas funciones al router y a un backend de negocio externo.
 
 ## Componentes del sistema (más allá de este repo)
 
@@ -21,7 +21,7 @@ flowchart LR
         SPA["React App\n(Home marketing / Login / Forgot-Reset Password)"]
     end
 
-    subgraph Backend["Backend de negocio (repo hermano)"]
+    subgraph Backend["API NestJS (Edge Gateway)"]
         Auth["/auth/*"]
         Ads["/advertisements/*"]
         Ind["/indicators/*"]
@@ -136,7 +136,7 @@ src/
 - **Sin estado global de negocio** (no Redux/Zustand): el único estado "global" es el **tema visual** (`ThemeContext` en `ThemeManager.tsx`, con `useThemeMode()`), y la sesión sigue viviendo en `localStorage` (`authToken`). El resto es estado local de componente.
 - **Sin guards de ruta**: el Home no es una pantalla "post-login" sino una landing pública de marketing/descarga de la app, coherente con el pivot del producto hacia empujar la instalación de la app nativa en vez de depender solo del portal web.
 - **`UrgencyTimer` es marketing, no session-real**: el countdown de 9 minutos en el Home es un valor hardcodeado en el cliente para presión de conversión — no está sincronizado con el timeout real de sesión configurado en el router/backend. No usarlo como fuente de verdad para soporte a usuarios.
-- **Deep-linking a la app nativa**: `public/.well-known/assetlinks.json` habilita Android App Links hacia `com.busdigital.app`, usado por el flujo de `/open-app` (`SessionExpiredHasApp.tsx`).
+- **Deep-linking a la app nativa**: `public/.well-known/assetlinks.json` habilita Android App Links hacia `com.vitalia.app`, usado por el flujo de `/open-app` (`SessionExpiredHasApp.tsx`).
 - **Sin base de datos ni persistencia propia**: toda persistencia de usuarios, sesiones y publicidades es responsabilidad del backend de negocio. Ver [03-base-datos.md](03-base-datos.md).
 
 ## Referencias cruzadas

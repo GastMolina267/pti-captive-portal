@@ -322,7 +322,7 @@ const AdvertisementCarousel: React.FC<AdvertisementCarouselProps> = ({ advertise
           fontWeight: 500,
         }}
       >
-        Anunciá tu comercio en BusDigital y llegá a miles de pasajeros.
+        Sumá tu farmacia o servicio de salud a Vitalia y llegá a miles de pacientes.
       </Typography>
     </Box>
   );

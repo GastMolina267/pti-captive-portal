@@ -21,8 +21,8 @@ La imagen final no contiene Node.js ni el código fuente — solo los estáticos
 ## Build y ejecución local
 
 ```bash
-docker build -t busdigital-captive-portal .
-docker run -p 3000:3000 busdigital-captive-portal
+docker build -t vitalia-captive-portal .
+docker run -p 3000:3000 vitalia-captive-portal
 ```
 
 Las variables `VITE_*` se **inyectan en tiempo de build** (Vite las reemplaza estáticamente al compilar), no en runtime del contenedor:
@@ -40,10 +40,9 @@ HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://localhost:3000/heal
 
 ## Uso en CI/CD
 
-El pipeline de GitHub Actions delega el build/push/deploy de imagen a workflows reutilizables del repositorio compartido `mindfactory-sw/mf-mindstack-gha`:
+El workflow [`00-pull-request-validation.yaml`](../../.github/workflows/00-pull-request-validation.yaml) corre en cada Pull Request hacia `main`/`develop` sobre runners estándar de GitHub (`ubuntu-latest`): lint, type-check, tests con cobertura, build y auditoría de dependencias.
 
-- [`01-deploy-to-dev.yaml`](../../.github/workflows/01-deploy-to-dev.yaml): en cada push a `main`, dispara build + deploy a `development` con versión `development-{run_number}`.
-- [`02-release.yaml`](../../.github/workflows/02-release.yaml): `workflow_dispatch` manual, resuelve versión semántica y despliega a `staging`/`production`.
+El despliegue se realiza en el Edge Gateway del hospital construyendo la imagen localmente (`docker build`) o mediante el `docker compose` del ecosistema.
 
 ## Variables de entorno en runtime del contenedor
 

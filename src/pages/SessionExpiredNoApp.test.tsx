@@ -13,7 +13,7 @@ describe('SessionExpiredNoApp', () => {
     expect(screen.getByText(/Pasos para continuar conectado/i)).toBeInTheDocument();
     expect(screen.getByText(/Google Play Store/i)).toBeInTheDocument();
     expect(screen.getByText(/consultar tus turnos médicos y renovar tu sesión/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /copiar "hospital digital"/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /copiar "vitalia"/i })).toBeInTheDocument();
   });
 
   test('permite copiar el nombre de la app al portapapeles', async () => {
@@ -25,11 +25,11 @@ describe('SessionExpiredNoApp', () => {
     });
 
     render(<SessionExpiredNoApp />);
-    const copyBtn = screen.getByRole('button', { name: /copiar "hospital digital"/i });
+    const copyBtn = screen.getByRole('button', { name: /copiar "vitalia"/i });
     fireEvent.click(copyBtn);
 
     await waitFor(() => {
-      expect(writeTextMock).toHaveBeenCalledWith('HOSPITAL DIGITAL');
+      expect(writeTextMock).toHaveBeenCalledWith('VITALIA');
       expect(screen.getByText(/¡nombre copiado!/i)).toBeInTheDocument();
     });
   });

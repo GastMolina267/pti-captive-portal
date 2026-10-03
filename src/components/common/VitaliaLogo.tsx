@@ -2,12 +2,12 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useThemeMode } from '../../themes/ThemeManager';
 
-interface HospitalLogoProps {
+interface VitaliaLogoProps {
   height?: number | { xs: number; sm: number };
   showSubtitle?: boolean;
 }
 
-export const HospitalLogo: React.FC<HospitalLogoProps> = ({
+export const VitaliaLogo: React.FC<VitaliaLogoProps> = ({
   height = 42,
   showSubtitle = true,
 }) => {
@@ -83,7 +83,7 @@ export const HospitalLogo: React.FC<HospitalLogoProps> = ({
 
       {/* Tipografía de la marca */}
       <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-        <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5 }}>
+        <Box sx={{ display: 'flex', alignItems: 'baseline' }}>
           <Typography
             component="span"
             sx={{
@@ -94,7 +94,7 @@ export const HospitalLogo: React.FC<HospitalLogoProps> = ({
               color: isDark ? '#F1F5FB' : '#0F172A',
             }}
           >
-            Hospital
+            Vital
           </Typography>
           <Typography
             component="span"
@@ -108,7 +108,7 @@ export const HospitalLogo: React.FC<HospitalLogoProps> = ({
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Digital
+            ia
           </Typography>
         </Box>
 
@@ -116,16 +116,16 @@ export const HospitalLogo: React.FC<HospitalLogoProps> = ({
           <Typography
             component="span"
             sx={{
-              fontSize: '9.5px',
+              fontSize: '9px',
               fontWeight: 700,
-              letterSpacing: '0.14em',
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
               color: isDark ? '#94A3B8' : '#64748B',
               lineHeight: 1.2,
               mt: '1px',
             }}
           >
-            Red de Salud & Wi-Fi
+            Ecosistema Digital Hospitalario
           </Typography>
         )}
       </Box>
@@ -133,4 +133,4 @@ export const HospitalLogo: React.FC<HospitalLogoProps> = ({
   );
 };
 
-export default HospitalLogo;
+export default VitaliaLogo;

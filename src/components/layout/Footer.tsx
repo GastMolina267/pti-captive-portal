@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import HospitalLogo from '../common/HospitalLogo';
+import VitaliaLogo from '../common/VitaliaLogo';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       }}
     >
       <Box sx={{ mb: 2 }}>
-        <HospitalLogo height={34} />
+        <VitaliaLogo height={34} />
       </Box>
 
       <Typography
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           fontWeight: 500,
         }}
       >
-        © 2026 Hospital Digital · Red de Atención Médica Integral
+        © 2026 Vitalia · Portal Cautivo del Ecosistema Digital Hospitalario
       </Typography>
     </Box>
   );

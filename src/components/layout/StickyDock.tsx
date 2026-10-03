@@ -3,7 +3,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Download, Wifi } from 'lucide-react';
 import { useThemeMode } from '../../themes/ThemeManager';
 
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.hospital.app';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.vitalia.app';
 
 const StickyDock: React.FC = () => {
   const [show, setShow] = useState(false);

@@ -1,28 +1,32 @@
-# BusDigital Cautive Portal
+# Vitalia · Portal Cautivo
 
-User login service for a bus fleet | Frontend application for the project
+Portal cautivo de la red Wi-Fi de pacientes (VLAN 20) de **Vitalia — Ecosistema Digital Hospitalario**, Proyecto Tecnológico Integrador (Ingeniería Informática, UBP).
 
-## 🚀 Inicio Rápido
+SPA en React + Vite + TypeScript que autentica al paciente y habilita su acceso a la red mediante el protocolo UAM/CHAP del router Teltonika RUT956.
 
-### Opción 1: Con Docker (Producción recomendado)
+## 🚀 Inicio rápido
 
-```bash
-# Construir imagen de producción
-docker build -t busdigital-captive-portal .
-
-# Ejecutar el contenedor (sirve build en puerto 4173)
-docker run -p 4173:4173 --name busdigital-captive-portal busdigital-captive-portal
-```
-
-### Opción 2: Desarrollo Local
+### Opción 1: Docker (recomendado para el Edge Gateway)
 
 ```bash
-# Instalar dependencias
-pnpm install  # o npm install
+# Construir la imagen de producción
+docker build -t vitalia-captive-portal .
 
-# Ejecutar en desarrollo
-pnpm dev      # o npm run dev
+# Ejecutar el contenedor (Nginx en el puerto 3000)
+docker run -p 3000:3000 --name vitalia-captive-portal vitalia-captive-portal
 ```
 
-- Desarrollo: http://localhost:5173
-- Preview producción local (opcional): `pnpm build && pnpm preview` → http://localhost:4173
+### Opción 2: Desarrollo local
+
+```bash
+pnpm install
+cp .env.example .env   # completar VITE_BASE_URL con la API del Edge Gateway
+pnpm dev
+```
+
+- Desarrollo: http://localhost:4173
+- Preview de producción: `pnpm build && pnpm preview`
+
+## 📚 Documentación
+
+Ver [`docs/`](docs/README.md). La identidad visual compartida con el Backoffice y la landing está en [`docs/03-customization/03-identidad-visual.md`](docs/03-customization/03-identidad-visual.md).

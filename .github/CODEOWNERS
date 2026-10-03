@@ -1,6 +1,0 @@
-# Project code
-@mindfactory-sw/proj-busdigital
-
-# Specific rules
-.github @mindfactory-sw/mf-devops @mindfactory-sw/mf-admin
-CODEOWNERS @mindfactory-sw/mf-devops @mindfactory-sw/mf-admin

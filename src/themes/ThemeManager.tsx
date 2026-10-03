@@ -21,7 +21,7 @@ const fontFamily = "'Plus Jakarta Sans', system-ui, sans-serif";
 
 function getStoredTheme(): ThemeMode {
   try {
-    const stored = localStorage.getItem('bd_theme');
+    const stored = localStorage.getItem('vitalia_theme');
     if (stored === 'dark' || stored === 'light') return stored;
   } catch {
     /* ignore */
@@ -48,7 +48,7 @@ export default function ThemeManager({ children }: Props) {
     document.body.classList.add(`${mode}-mode`);
 
     try {
-      localStorage.setItem('bd_theme', mode);
+      localStorage.setItem('vitalia_theme', mode);
     } catch {
       /* ignore */
     }

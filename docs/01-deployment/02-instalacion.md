@@ -7,8 +7,8 @@ Este documento cubre la instalación del frontend en dos modos: desarrollo local
 ## 1. Clonar e instalar dependencias
 
 ```bash
-git clone <url-del-repo> mindfactory-busdigital-captive-portal
-cd mindfactory-busdigital-captive-portal
+git clone <url-del-repo> pti-captive-portal
+cd pti-captive-portal
 corepack enable          # habilita pnpm vía corepack
 pnpm install
 ```

@@ -4,7 +4,7 @@ import { Clock, Download, Check, Wifi } from 'lucide-react';
 
 const TOTAL_SECONDS = 540;
 const CIRCUMFERENCE = 2 * Math.PI * 52;
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.hospital.app';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.vitalia.app';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 

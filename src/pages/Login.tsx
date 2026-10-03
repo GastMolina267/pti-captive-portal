@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Card, Tabs, Tab, Typography } from '@mui/material';
 import { HeartPulse } from 'lucide-react';
-import HospitalLogo from '../components/common/HospitalLogo';
+import VitaliaLogo from '../components/common/VitaliaLogo';
 import LoginTab from '../components/LoginTab';
 import RegisterTab from '../components/RegisterTab';
 import FooterAdvertisement from '../components/FooterAdvertisement';
@@ -27,7 +27,7 @@ const Login: React.FC = () => {
       }}
     >
       <Box mb={3.5} sx={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px' }}>
-        <HospitalLogo height={52} />
+        <VitaliaLogo height={52} />
       </Box>
 
       <Box display="flex" flexDirection="column" alignItems="center" gap={1.2} mb={3}>

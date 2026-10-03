@@ -2,10 +2,10 @@ import React from 'react';
 import { AppBar, Toolbar, Box, IconButton, Button } from '@mui/material';
 import { Download, Sun, Moon } from 'lucide-react';
 import { useThemeMode } from '../../themes/ThemeManager';
-import HospitalLogo from '../common/HospitalLogo';
+import VitaliaLogo from '../common/VitaliaLogo';
 import HeaderAds from './HeaderAds';
 
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.hospital.app';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.vitalia.app';
 
 const Header: React.FC = () => {
   const { mode, toggleTheme } = useThemeMode();
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           minHeight: { xs: '56px', sm: '64px' },
         }}
       >
-        <HospitalLogo height={38} />
+        <VitaliaLogo height={38} />
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <IconButton

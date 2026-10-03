@@ -67,7 +67,7 @@ class FaroObservabilityProvider implements ObservabilityProvider {
     this.faro = initializeFaro({
       url: cfg.endpoint,
       app: {
-        name: 'busdigital-captive-portal',
+        name: 'vitalia-captive-portal',
         environment: cfg.environment,
         version: cfg.release,
       },

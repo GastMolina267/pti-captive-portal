@@ -1,7 +1,7 @@
-# BusDigital Captive Portal
+# Vitalia · Portal Cautivo
 
-> Portal cautivo de conectividad WiFi gratuita para pasajeros de transporte público.
+> Portal cautivo de la red Wi-Fi de pacientes del Ecosistema Digital Hospitalario (Vitalia). Permite conectarse a internet en la sala de espera y acceder a la gestión de turnos.
 
 ## Páginas
-- [Iniciar Sesión](/login): Acceso al portal de internet.
-- [Recuperar Contraseña](/forgot-password): Recuperación de cuenta.
+- [Iniciar sesión](/login): Acceso a la red Wi-Fi del hospital.
+- [Recuperar contraseña](/forgot-password): Recuperación de cuenta.

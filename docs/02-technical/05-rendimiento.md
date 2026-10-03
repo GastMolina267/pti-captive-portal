@@ -1,6 +1,6 @@
 # Rendimiento
 
-El portal se sirve a celulares de pasajeros conectados a la red WiFi del bus, con hardware y conectividad variables — el rendimiento de carga impacta directamente en la tasa de éxito de la autenticación. Estas son las optimizaciones vigentes y cómo mantenerlas.
+El portal se sirve a celulares de pacientes y acompañantes conectados a la red Wi-Fi del hospital, con hardware y conectividad variables — el rendimiento de carga impacta directamente en la tasa de éxito de la autenticación. Estas son las optimizaciones vigentes y cómo mantenerlas.
 
 ## Code-splitting por ruta
 

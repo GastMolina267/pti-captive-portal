@@ -2,7 +2,7 @@
 
 ## Alcance
 
-Este repositorio (**frontend SPA**) **no contiene ninguna base de datos, ORM, migración ni esquema propio**. Toda persistencia de usuarios, sesiones, publicidades e indicadores vive en el **backend de negocio** (repo hermano `mindfactory-busdigital-backend`), fuera de este repositorio.
+Este repositorio (**frontend SPA**) **no contiene ninguna base de datos, ORM, migración ni esquema propio**. Toda persistencia de usuarios, sesiones, publicidades e indicadores vive en el **backend de negocio** (API NestJS del Edge Gateway, con PostgreSQL), fuera de este repositorio.
 
 > Lo que sigue es el **modelo de datos tal como lo consume el frontend**, inferido de las interfaces TypeScript y los payloads de [02-api.md](02-api.md) — es un contrato de API, no un esquema de base de datos.
 
@@ -91,7 +91,7 @@ Lo único que este repositorio persiste es en el **navegador**, no en una base d
 | Storage | Clave | Contenido | Dónde |
 | --- | --- | --- | --- |
 | `localStorage` | `authToken` | JWT devuelto por `/auth/login` o `/auth/register` | `authService.ts`, leído por `axiosInstance.ts` |
-| `localStorage` | `bd_theme` | Preferencia de tema visual (`'light'` \| `'dark'`) | [`ThemeManager.tsx`](../../src/themes/ThemeManager.tsx) — ver [../03-customization/01-temas.md](../03-customization/01-temas.md) |
+| `localStorage` | `vitalia_theme` | Preferencia de tema visual (`'light'` \| `'dark'`) | [`ThemeManager.tsx`](../../src/themes/ThemeManager.tsx) — ver [../03-customization/01-temas.md](../03-customization/01-temas.md) |
 
 No hay cookies, IndexedDB, ni cache de service worker configurados en este repo.
 

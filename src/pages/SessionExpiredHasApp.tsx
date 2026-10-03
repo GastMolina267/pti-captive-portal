@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Box, Card, Typography, Button, CircularProgress } from '@mui/material';
 import { Smartphone, ExternalLink } from 'lucide-react';
-import HospitalLogo from '../components/common/HospitalLogo';
+import VitaliaLogo from '../components/common/VitaliaLogo';
 
 const SessionExpiredHasApp: React.FC = () => {
   const appLink = `${globalThis.location.origin}/open-app`;
@@ -53,7 +53,7 @@ const SessionExpiredHasApp: React.FC = () => {
       }}
     >
       <Box mb={3.5} sx={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px' }}>
-        <HospitalLogo height={52} />
+        <VitaliaLogo height={52} />
       </Box>
 
       <Box display="flex" flexDirection="column" alignItems="center" gap={1.5} mb={3.5}>

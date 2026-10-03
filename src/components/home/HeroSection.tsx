@@ -3,7 +3,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Download, Check, ShieldCheck, HeartPulse, Calendar, Activity } from 'lucide-react';
 import appMockup from '../../assets/app-mockup.png';
 
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.hospital.app';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.vitalia.app';
 
 const trustChips = [
   { icon: ShieldCheck, label: 'Red Segura y Privada' },
@@ -180,7 +180,7 @@ const HeroSection: React.FC = () => {
         <Box
           component="img"
           src={appMockup}
-          alt="App Hospital Digital"
+          alt="App Vitalia"
           sx={{
             position: 'relative',
             zIndex: 2,

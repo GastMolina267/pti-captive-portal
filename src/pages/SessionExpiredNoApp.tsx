@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Card, Typography, Button, Snackbar, Alert } from '@mui/material';
 import { AlertTriangle, Copy, Check } from 'lucide-react';
-import HospitalLogo from '../components/common/HospitalLogo';
+import VitaliaLogo from '../components/common/VitaliaLogo';
 
-const APP_NAME = 'HOSPITAL DIGITAL';
+const APP_NAME = 'VITALIA';
 
 const SessionExpiredNoApp: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -42,7 +42,7 @@ const SessionExpiredNoApp: React.FC = () => {
       }}
     >
       <Box mb={3.5} sx={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px' }}>
-        <HospitalLogo height={52} />
+        <VitaliaLogo height={52} />
       </Box>
 
       <Box display="flex" flexDirection="column" alignItems="center" gap={1.5} mb={3.5}>

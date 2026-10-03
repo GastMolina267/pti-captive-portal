@@ -4,7 +4,7 @@
 
 - **HTTPS del backend de negocio**: depende de cómo se despliegue `VITE_BASE_URL` — este repo no fuerza HTTPS en `axiosInstance.ts`. En producción, `VITE_BASE_URL` debe ser `https://` para proteger email/password en tránsito.
 - **Certificados SSL/TLS**: no se gestionan en este repositorio (Nginx en `infra/nginx.conf` escucha en `:3000` plano). La terminación TLS la hace un proxy/balanceador delante del contenedor. Ver [../01-deployment/04-docker.md](../01-deployment/04-docker.md).
-- **Redirección al NAS (`/logon`)**: se hace por HTTP simple (`http://{uamip}:{uamport}/logon`) — comportamiento estándar del protocolo UAM/CoovaChilli sobre redes locales del propio bus.
+- **Redirección al NAS (`/logon`)**: se hace por HTTP simple (`http://{uamip}:{uamport}/logon`) — comportamiento estándar del protocolo UAM/CoovaChilli sobre la red local del hospital.
 
 ## Protocolo CHAP (autenticación contra el NAS)
 
@@ -40,4 +40,4 @@ El workflow [`00-pull-request-validation.yaml`](../../.github/workflows/00-pull-
 
 ## Datos personales
 
-El registro de usuario (`RegisterTab.tsx` / `/auth/register`) recolecta email, teléfono, género y fecha de nacimiento — datos personales sujetos a la normativa de protección de datos aplicable en la jurisdicción donde opera la flota.
+El registro de usuario (`RegisterTab.tsx` / `/auth/register`) recolecta email, teléfono, género y fecha de nacimiento — datos personales sujetos a la normativa de protección de datos aplicable en Argentina (Ley 25.326 de Protección de Datos Personales).
