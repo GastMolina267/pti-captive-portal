@@ -1,0 +1,15 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.busdigital.app",
+      "sha256_cert_fingerprints": [
+        "46:20:47:02:01:08:D6:59:6D:8B:7A:A4:42:26:07:C5:D6:81:6C:88:D6:49:9E:99:78:9C:13:FA:8B:5D:4F:0C",
+        "00:A2:57:FD:02:BA:BB:9B:85:BE:D4:2D:6B:2D:48:FD:DC:A8:29:1E:F3:46:4C:C6:00:69:90:7F:C1:76:AA:A9",
+        "AD:1E:FF:A0:BD:B1:65:D0:F3:2D:9E:F5:DF:09:1B:DF:1F:3B:98:BB:18:AC:6F:D6:F7:66:C7:6F:7C:39:D1:44"
+      ]
+    }
+  }
+]
+

@@ -1,0 +1,89 @@
+version: 2
+updates:
+  # Dependencias de pnpm (NodeJS)
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '04:30'
+      timezone: 'America/Argentina/Buenos_Aires'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'deps'
+      prefix-development: 'deps-dev'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'pnpm'
+      - 'security'
+    groups:
+      # Agrupar actualizaciones de seguridad
+      security:
+        applies-to: 'security-updates'
+        patterns:
+          - '*'
+      # Agrupar dependencias de Next.js
+      nextjs:
+        patterns:
+          - 'next*'
+          - '@next/*'
+          - 'eslint-config-next'
+      # Agrupar herramientas de desarrollo
+      dev-tools:
+        dependency-type: 'development'
+        patterns:
+          - 'jest*'
+          - '@testing-library/*'
+          - 'eslint*'
+          - 'prettier*'
+          - 'husky'
+          - 'lint-staged'
+          - 'typescript'
+          - '@types/*'
+      # Agrupar dependencias de React
+      react:
+        patterns:
+          - 'react*'
+          - '@types/react*'
+
+  # Dependencias de Docker (imágenes base)
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '04:30'
+      timezone: 'America/Argentina/Buenos_Aires'
+    commit-message:
+      prefix: 'deps(docker)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'docker'
+      - 'security'
+    groups:
+      docker-images:
+        applies-to: 'security-updates'
+        patterns:
+          - '*'
+
+  # Dependencias de GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '04:30'
+      timezone: 'America/Argentina/Buenos_Aires'
+    commit-message:
+      prefix: 'deps(actions)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+      - 'security'
+    groups:
+      github-actions:
+        patterns:
+          - '*'

@@ -1,0 +1,7 @@
+# BusDigital Captive Portal
+
+> Portal cautivo de conectividad WiFi gratuita para pasajeros de transporte público.
+
+## Páginas
+- [Iniciar Sesión](/login): Acceso al portal de internet.
+- [Recuperar Contraseña](/forgot-password): Recuperación de cuenta.

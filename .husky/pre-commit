@@ -1,0 +1,13 @@
+echo "🔍 Running pre-commit checks..."
+
+# Lint y format archivos staged
+echo "📝 Running lint-staged..."
+pnpm exec lint-staged
+
+# Type checking (rápido)
+echo "🔧 Running type check..."
+pnpm type-check
+
+echo "✅ Pre-commit checks passed! 🚀\n"
+
+echo "Validating commit message format..."

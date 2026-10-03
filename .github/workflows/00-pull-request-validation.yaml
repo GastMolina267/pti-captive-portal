@@ -1,0 +1,99 @@
+name: Pull Request Workflow
+on:
+  pull_request:
+    branches:
+      - main
+      - nestjs
+
+jobs:
+  prepare:
+    runs-on: mf-mindstack-arc
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-install@main
+        with:
+          checkout: true
+          prepare: true
+      
+  lint:
+    name: Run linter
+    runs-on: mf-mindstack-arc
+    needs: [prepare]
+    steps:
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-install@main
+        with:
+          checkout: true
+          prepare: true
+
+      - name: Run ESLint
+        run: pnpm lint
+  
+  tests:
+    name: Run tests
+    runs-on: mf-mindstack-arc
+    needs: [prepare]
+    env:
+      REPORT_CACHE_KEY: ${{ github.repository }}-${{ github.event.pull_request.number }}-${{ github.run_number }}-report-cache-key
+      REPORT_PATH: coverage/unit/lcov.info
+    outputs:
+      report-cache-key: ${{ env.REPORT_CACHE_KEY }}
+      report-path: ${{ env.REPORT_PATH }}
+    steps:
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-install@main
+        with:
+          checkout: true
+          prepare: true
+      
+      - name: Store lcov report into the cache
+        id: cache-lcov
+        uses: actions/cache@v4
+        with:
+          key: ${{ env.REPORT_CACHE_KEY }}
+          path: ${{ env.REPORT_PATH }}
+
+      - name: Run tests and generate coverage report
+        run: |
+          cp .env.example .env
+          pnpm test:cov
+          
+  security:
+    name: Run security audit
+    runs-on: mf-mindstack-arc
+    needs: [prepare]
+    steps:
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-install@main
+        with:
+          checkout: true
+          prepare: true
+      
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-audit@main
+        with:
+          severity: 'critical'
+      
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/gitleaks@main
+
+  build:
+    name: Build project
+    runs-on: mf-mindstack-arc
+    needs: [prepare]
+    steps:
+      - uses: mindfactory-sw/mf-mindstack-gha/.github/actions/pnpm-install@main
+        with:
+          checkout: true
+          prepare: true
+
+      - name: Build project
+        run: pnpm build 
+  
+  sonarqube:
+    needs: [prepare, tests]
+    uses: mindfactory-sw/mf-mindstack-gha/.github/workflows/ci-static-analysis.yaml@main
+    secrets: inherit
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      report-path: ${{ needs.tests.outputs.report-path }}
+      report-cache-key: ${{ needs.tests.outputs.report-cache-key }}
